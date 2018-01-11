@@ -29,13 +29,13 @@ public class CubeController : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter(Collision other){
+	void OnCollisionEnter2D(Collision2D other){
 		if (other.gameObject.tag == "CubeTag" || other.gameObject.tag == "GroundTag") {
 			//衝突時に音を鳴らす
-			GetComponent<AudioSource> ().volume = 0.3f;
+			AudioSource audio = GetComponent<AudioSource> ();
+			audio.Play ();
+
 		}
-		else {
-		GetComponent<AudioSource> ().volume = 0;
-		}
+		else {}
 	}
 }
